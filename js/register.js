@@ -8,13 +8,6 @@ $( "#alert_register" ).hide();
 // noinspection JSUnresolvedFunction
 $( "#alert_login" ).hide();
 
-$( function() {
-  $( "#datepicker" ).datepicker({
-    numberOfMonths: 3,
-    showButtonPanel: true
-  });
-} );
-
 function afterRegister(){
   $('#register').hide();
   $('#login').show();

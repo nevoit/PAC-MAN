@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+
+  <title>PAC-MAN</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <!-- Fixed navbar -->
+    <menu>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand"><img src="images/pacman.svg" id="logo_svg" /><span id="logo_name"> PAC-MAN</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a id="home_mode" class="nav-link">Welcome <span class="sr-only">(current)</span></a>
+          </li>
+          <li id="game_user" class="nav-item">
+            <a id="nav_game" class="nav-link">Game</a>
+          </li>
+          <li id="login_user" class="nav-item">
+            <a id="nav_login" class="nav-link">Login</a>
+          </li>
+          <li id="register_user" class="nav-item">
+            <a id="nav_register" class="nav-link">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">About</a>
+          </li>
+          <li id="logout_user" class="nav-item">
+            <a id="nav_logout" class="nav-link">Logout</a>
+          </li>
+        </ul>
+        <div class="form-inline mt-2 mt-md-0">
+            <span id="nt_sol">
+                <a class="credit navbar-brand" href="https://www.linkedin.com/in/nevoitzhak/">Nevo Itzhak</a>
+                <img src="images/pacman_white.svg" id="nt_sol_image" />
+                <a class="credit navbar-brand" href="https://www.linkedin.com/in/tomer-shahar-sise">Tomer Shahar</a>
+            </span>
+        </div>
+      </div>
+    </nav>
+    </menu>
+  </header>
+
+  <!-- Begin page content -->
+  <main role="main" class="container">
+
+    <content>
+
+      <div id="welcome" class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome</h1>
+            <p class="lead" id="welcome_text">
+                Please login if you already have an account. If you don't, what are you waiting for? Go register!
+                <br />
+            </p>
+            <img id="welcome_gif" src="images/pacman_gif.gif"/><br/>
+            <button id="btn_play" type="button" class="btn btn-dark btn-lg btn-block">Play</button>
+          <button id="btn_login" type="button" class="btn btn-dark btn-lg btn-block">Login</button>
+          <button id="btn_register" type="button" class="btn btn-dark btn-lg btn-block">Register</button>
+        </div>
+      </div>
+
+      <div id="login" class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Please sign in</h1>
+          <p class="lead">Enter your username and password credentials to begin playing.</p>
+          <form class="form-signin">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="login_username_image"><img src="images/pacman_black.png" /></span>
+              </div>
+              <input type="text" id="login_username" class="form-control" placeholder="Username" required autofocus>
+            </div>
+
+            <label for="login_password" class="sr-only">Password</label>
+            <input type="password" id="login_password" class="form-control" placeholder="Password" required>
+
+            <div id="alert_login" class="alert alert-warning" role="alert">
+            <strong>Holy guacamole!<br/></strong> <span id="alert_details_login">You should check in on some of those fields below.</span>
+            </div>
+            <button id="sign_in" type="button" class="btn btn-dark btn-lg btn-block">Sign in</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="register" class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Register</h1>
+          <p class="lead">Please enter the necessary details for registration. All fields are mandatory. </p>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="username">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><img src="images/pacman_black.png" /></span>
+                </div>
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="pass">Password</label>
+              <input type="password" class="form-control" id="pass" placeholder="Password" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="you@post.bgu.ac.il" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="datepicker">Birthday</label>
+              <input type="text" class="form-control" id="datepicker" placeholder="Click here to pick a date">
+            </div>
+
+            <hr class="mb-4">
+            <div id="alert_register" class="alert alert-warning" role="alert">
+            <strong>Holy guacamole!</strong> <span id="alert_details">You should check in on some of those fields below.</span>
+            </div>
+
+            <button id="continue_register" type="button" class="btn btn-dark btn-lg btn-block">Continue</button>
+          </form>
+        </div>
+      </div>
+
+
+      <div id="game" class="jumbotron jumbotron-fluid">
+
+        <div id="container_pre_game" class="container">
+        <form class="needs-validation">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="ball_numm">Number of balls [50-90 balls]</label>
+                <input type="number" class="form-control" id="ball_numm" placeholder="" value="50" required min="50" max="90"  pattern="\d+" name="name_balls">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="game_time">Game time [60-800 sec]</label>
+                <input type="number" class="form-control" id="game_time" placeholder="" value="60" required min="60" max="800"  pattern="\d+" name="name_time">
+              </div>
+             <div class="col-md-6 mb-3">
+                <label for="ghost_num">Number of ghost [1-3 ghosts]</label>
+                <input type="number" class="form-control" id="ghost_num" placeholder="" value="3" required min="1" max="3"  pattern="\d+" name="name_ghosts">
+              </div>
+            <div class="col-md-6 mb-3">
+                <label for="level_check">Level [1-10]</label>
+                <input type="number" class="form-control" id="level_check" placeholder="" value="6" required min="1" max="10"  pattern="\d+" name="name_level">
+              </div>
+            </div>
+            <button type="button" class="btn btn-dark btn-lg btn-block" id="finish_pref">Start!</button>
+          </form>
+        </div>
+
+          <div id="load_animation">
+          </div>
+
+        <div id="container_game" class="container">
+          <div class="row">
+            <div class="col">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">SCORE</span>
+                </div>
+                <input id="lblScore" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">TIME LEFT</span>
+                </div>
+                <input id="lblTime" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              </div>
+            </div>
+           <div class="col">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">HEARTS</span>
+                </div>
+                <input id="lblHeart" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-md-3 col-sm-12 border-right rounded legend_class">
+              <div id="legend_container">
+                <span></span>
+              </div>
+
+              <div id="player_name_span"  class="alert alert-info">
+                <span id="player_name_lbl">
+                  Player:
+                  </span>
+                  <span id="player_name"><b>Nevo</b></span>
+              </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <span class="p5_ball">•</span>
+                        </div>
+                        <div class="col-sm">
+                            <span>5 points</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <span class="p15_ball">•</span>
+                        </div>
+                        <div class="col-sm">
+                            <span>15 points</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <span class="p25_ball">•</span>
+                        </div>
+                        <div class="col-sm">
+                            <span>25 points</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <span> <img src="images/orange_pill.svg" width="20px" height="20px"> </span>
+                        </div>
+                        <div class="col-sm">
+                            <span>
+                                <details>
+                                    <summary>Scare</summary>
+                                    <p>The ghosts run away from you</p>
+                                </details>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <span><img src="images/green_pill.svg" width="20px" height="20px"> </span>
+                        </div>
+                        <div class="col-sm">
+                            <span>
+                                <details>
+                                    <summary>Poison</summary>
+                                    <p id="poison_summary">Pacman moves opposite of the key pressed</p>
+                                </details>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <span><img src="images/cherry2.svg" width="20px" height="20px"> </span>
+                        </div>
+                        <div class="col-sm">
+                            <span>
+                                <details>
+                                    <summary>Cherry</summary>
+                                    <p>50 bonus points!!</p>
+                                </details>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <button class="btn btn-dark btn-lg btn-block" id="re_game">Start new game</button>
+                <div class="alert alert-primary" role="alert">
+                    Status: <span id="game_status"></span>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12">
+              <canvas id="canvas" class="pacman_game"></canvas>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+
+            </div>
+          </div>
+
+        </div> <!-- container game -->
+      </div>  <!-- main game tag -->
+    </content>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted" data-toggle="modal" data-target=".ad-modal">Advertising</span>
+        <span class="text-muted" data-toggle="modal" data-target=".contact-modal">Contact </span>
+        <span id="copyright">&copy; 2018</span>
+    </div>
+  </footer>
+
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">About This Product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h3>Creators:</h3>
+            <img src="images/NT_logo.png"/><br/>
+          <br/>
+          <a>Nevo Itzhak and Tomer Shahar</a><br/>
+          <a>This game was created using a combination of Javascript, JQuery, HTML and css through the bootstrap library.</a><br/><br/>
+          <a>The most difficult part developing this game was ensuring the game itself works as expected and is intuitive.
+              Javascript proved to be a tricky language to learn and use properly, and a lot of effort went in ensuring that the game
+          runs smoothly and without bugs or undefined behavior.</a><br/><br/>
+          <span>Internet programming environments <br/> Department of Software and Information Systems Engineering<br/>
+              Copyright 2018 ltd</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade ad-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="advertise_modal">Want Your Product to be Seen?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>Advertise With NT Solutions!</h3>
+          <span>Only now, for a limited time, you too can promote your product on our website for a price of just 5 bonus points!<br/></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="contact_modal">Contact Us</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <h3>Details</h3>
+                  <span>Tomer Shahar - stomer@post.bgu.ac.il - https://www.linkedin.com/in/tomer-shahar-sise<br/></span>
+                  <span>Nevo Itzhak - nevoit@post.bgu.ac.il - https://www.linkedin.com/in/nevoitzhak/<br/></span>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/register.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+  <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

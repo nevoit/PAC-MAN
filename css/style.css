@@ -1,0 +1,215 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One');
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+    text-align: left;
+}
+
+.footer .container .text-muted:hover{
+    text-decoration: underline;
+
+}
+
+.navbar-brand{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#logo_name{
+    color: white;
+    cursor: default;
+}
+
+.nav-item{
+    cursor: default;
+}
+
+.nav-link{
+    cursor: pointer;
+}
+
+.alert-primary{
+    margin-top: 20px;
+}
+h1.display-4{
+font-family: 'Black Ops One', cursive;
+
+}
+
+div#player_name_span {
+    margin-bottom: 10px;
+}
+
+.footer .container .text-muted{
+    padding: 0% 2% 0% 0%;
+    text-align: left;
+
+}
+
+#game {
+    font-style: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+canvas#canvas {
+    margin-top: 15px;
+    background-color: #212754;
+    padding: 15px;
+    float: center;
+}
+
+.p5_ball{
+    color: red;
+    font-size: 32px;
+}
+
+.p15_ball{
+    color: #3b3dff;
+    font-size: 32px;
+}
+
+.p25_ball{
+    color: #ff9500;
+    font-size: 32px;
+}
+
+.col-sm{
+    display: table;
+    float: right;
+    height: 65px;
+    font-size: 15px;
+}
+.col-sm span{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#logo_name
+{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+}
+
+
+input#lblTime, input#lblScore{
+    background-color: black;
+    color: red;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+ input#lblHeart {
+    background-color: black;
+}
+
+details p{
+     font-size: 12px;
+     color: #0400ff;
+ }
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#alert_register{
+    color: #ab0717;
+    text-decoration: bold;
+}
+
+img#welcome_gif {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img#logo_svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: baseline;
+}
+
+span#nt_sol {
+    color: white;
+}
+
+img#nt_sol_image {
+    width: 24px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+span#game_status {
+    font-weight: bold;
+}
+
+a.credit {
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: underline;
+    font-size: 18px;
+}

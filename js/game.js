@@ -580,8 +580,10 @@ function setMusic() {
 }
 
 function stopMusic() {
+    if (null !== bg_music) {
     bg_music.pause();
     bg_music.currentTime = 0;
+    }
 }
 
 function putGhosts() {

@@ -124,7 +124,8 @@ $(document).ready(function () {
 
         $("#container_pre_game").hide();
         $("#container_game").show();
-        lblHeart.value = printHearts(hearts + 1);
+        blue_ghost_shape = null;
+        pink_ghost_shape = null;
         Start();
     });
 
@@ -189,6 +190,9 @@ function printHearts(number_of_hearts)
 function Start() {
     time_left = max_game_time;
     score = 0;
+    counter = 0;
+    hearts = 2;
+    lblHeart.value = printHearts(hearts + 1);
     setBallNumbers();
     canvasWidth = document.getElementById("canvas").width;
     canvasHeight =  document.getElementById("canvas").height;
@@ -801,8 +805,8 @@ function cleanBeforeNewGame() {
     clearTimeout(gift_timeout);
     pac_color = "yellow";
     gameOver = false;
-    blue_ghost_shape = null
-    pink_ghost_shape = null
+    blue_ghost_shape = null;
+    pink_ghost_shape = null;
 }
 
 function cleanBeforeNewTry() {

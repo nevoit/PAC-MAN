@@ -125,8 +125,6 @@ $( document ).ready(function() {
     stopMusic();
     cleanBeforeNewGame();
     hearts = 2; //actually 3
-    bg_music.pause();
-    bg_music.currentTime = 0;
     gameOver = false;
     clearInterval(countDownTimer);
     time_left = max_game_time;

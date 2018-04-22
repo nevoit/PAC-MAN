@@ -8,3 +8,5 @@ The most difficult part developing this game was ensuring the game itself works 
 Internet programming environments 
 Department of Software and Information Systems Engineering
 Copyright 2018 ltd
+
+![the-game](https://github.com/nevoit/PAC-MAN/blob/master/images/intro.png?raw=true)

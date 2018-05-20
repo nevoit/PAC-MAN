@@ -140,6 +140,7 @@ $(document).ready(function () {
         $("#game_time").val("60");
         $("#level_check").val("6");
 
+        stopMusic();
         window.clearInterval(interval);
         window.clearInterval(countDownTimer);
     });

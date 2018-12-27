@@ -1,5 +1,6 @@
 # PAC-MAN
-
+Internet programming environments 
+Department of Software and Information Systems Engineering
 Nevo Itzhak and Tomer Shahar
 
 In this project we wrote a version of the popular Pacman game in HTML5/CSS3/JavaScript/JQuery. The website involved registering and logging in (without the use of a DB – i.e registering is saved per session), selecting options for the game and providing as much of an interactive experience as possible for the user. We also used the Bootstrap 4 library.
@@ -10,10 +11,6 @@ The most difficult part developing this game was ensuring the game itself works 
 
 Licence:
 =============
-Internet programming environments 
-
-Department of Software and Information Systems Engineering
-
 Copyright 2018 Nevo Itzhak and Tomer Shahar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

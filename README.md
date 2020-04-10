@@ -12,6 +12,10 @@ The most difficult part developing this game was ensuring the game itself works 
 
 ![the-game](https://github.com/nevoit/PAC-MAN/blob/master/images/intro.png?raw=true)
 
+## Authors
+* **Tomer Shahar** - [Tomer Shahar](https://github.com/Tomer-Shahar)
+* **Nevo Itzhak** - [Nevo Itzhak](https://github.com/nevoit)
+
 Licence:
 =============
 Copyright 2018 Nevo Itzhak and Tomer Shahar
